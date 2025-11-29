@@ -5,7 +5,6 @@ A simple AI-powered web application for automatic text summarization of document
 ## Repository Contents
 
 - **app.py** – Core application with file processing, AI summarization, and user interface
-- **requirements.txt** – Python dependencies for the project
 - **README.md** – Project documentation and setup instructions
 
 ## Description
