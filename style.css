@@ -25,6 +25,12 @@ h1 {
     line-height: 1.1 !important;
 }
 
+/* All heading colors */
+h2, h3, h4, h5, h6 {
+    color: #1d1d1f !important;
+    font-weight: 600 !important;
+}
+
 /*Subtitle/paragraph styling*/
 .stMarkdown p {
     font-size: 21px;
@@ -33,6 +39,16 @@ h1 {
     margin-bottom: 40px;
     font-weight: 400;
     line-height: 1.4;
+}
+
+/* General text color */
+p, span, div, label {
+    color: #1d1d1f;
+}
+
+/* Markdown content color */
+.stMarkdown {
+    color: #1d1d1f !important;
 }
 
 /*File uploader container*/
@@ -153,6 +169,7 @@ h1 {
     font-size: 17px !important;
     transition: all 0.2s ease;
     background: #fafafa !important;
+    color: #1d1d1f !important;
 }
 
 .stTextInput > div > div > input:focus,
@@ -160,6 +177,33 @@ h1 {
     border-color: #007aff !important;
     background: #ffffff !important;
     box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.1) !important;
+}
+
+/* Metrics styling */
+[data-testid="stMetricValue"] {
+    color: #1d1d1f !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #6e6e73 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+/* Expander styling */
+.streamlit-expanderHeader {
+    background: #f5f5f7 !important;
+    border-radius: 12px !important;
+    color: #1d1d1f !important;
+    font-weight: 600 !important;
+}
+
+.streamlit-expanderContent {
+    border: none !important;
+    background: #fafafa !important;
+    border-radius: 0 0 12px 12px !important;
 }
 
 /*Hide Streamlit branding*/
