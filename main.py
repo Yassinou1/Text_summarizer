@@ -155,7 +155,7 @@ def main():
                 if summary:
                     st.markdown(f'''
                         <div class="summary-container">
-                            <h3 class="summary-title">📋 Summary</h3>
+                            <h3 class="summary-title">Summary</h3>
                             <p class="summary-text">{summary}</p>
                         </div>
                     ''', unsafe_allow_html=True)
