@@ -29,10 +29,4 @@ The application uses:
 - **Custom CSS** for Apple-style design aesthetics
 
 ## Deployment
-
-The application can be deployed on:
-- Streamlit Community Cloud (free)
-- Hugging Face Spaces
-- Local development environments
-
 *Simple deployment: `streamlit run app.py`*
