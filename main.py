@@ -10,139 +10,13 @@ import os
 #page config.
 st.set_page_config(
     page_title="Text Summarizer",
-    page_icon="📝",
     layout="centered",
     initial_sidebar_state="collapsed"
 )
 
-#custom CSS for Apple-like style
-st.markdown("""
-<style>
-    /*Import SF Pro font if available, fallback to system fonts*/
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-
-    .stApp {
-        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    /*Main container styling*/
-    .main-container {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        border-radius: 24px;
-        padding: 3rem 2rem;
-        margin: 2rem auto;
-        max-width: 800px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-    }
-
-    /*Title styling*/
-    .app-title {
-        font-size: 3rem;
-        font-weight: 300;
-        color: #1d1d1f;
-        text-align: center;
-        margin-bottom: 0.5rem;
-        letter-spacing: -0.02em;
-    }
-
-    .app-subtitle {
-        font-size: 1.2rem;
-        color: #86868b;
-        text-align: center;
-        margin-bottom: 3rem;
-        font-weight: 400;
-    }
-
-    /*File uploader styling*/
-    .stFileUploader > div > div > div {
-        background: #f5f5f7;
-        border: 2px dashed #d2d2d7;
-        border-radius: 16px;
-        padding: 3rem 2rem;
-        text-align: center;
-        transition: all 0.3s ease;
-    }
-
-    .stFileUploader > div > div > div:hover {
-        border-color: #007aff;
-        background: #f0f7ff;
-    }
-
-    /*Button styling*/
-    .stButton > button {
-        background: linear-gradient(135deg, #007aff 0%, #5856d6 100%);
-        color: white;
-        border: none;
-        border-radius: 12px;
-        padding: 0.75rem 2rem;
-        font-weight: 500;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
-        width: 100%;
-    }
-
-    .stButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0, 122, 255, 0.4);
-    }
-
-    /*Summary container*/
-    .summary-container {
-        background: #f5f5f7;
-        border-radius: 16px;
-        padding: 2rem;
-        margin-top: 2rem;
-        border-left: 4px solid #007aff;
-    }
-
-    .summary-title {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: #1d1d1f;
-        margin-bottom: 1rem;
-    }
-
-    .summary-text {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #424245;
-        font-weight: 400;
-    }
-
-    /*Progress bar*/
-    .stProgress .st-bo {
-        background-color: #007aff;
-    }
-
-    /*Success/Error message*/
-    .stSuccess, .stError {
-        border-radius: 12px;
-        border: none;
-    }
-
-    /*Hide Streamlit branding*/
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-
-    /*Responsive design*/
-    @media (max-width: 768px) {
-        .main-container {
-            margin: 1rem;
-            padding: 2rem 1.5rem;
-        }
-
-        .app-title {
-            font-size: 2.5rem;
-        }
-    }
-</style>
-""", unsafe_allow_html=True)
-
+#load written css file
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 #init. summarization pipeline
 @st.cache_resource
@@ -298,7 +172,7 @@ def main():
     else:
         st.markdown('''
             <div style="text-align: center; color: #86868b; margin-top: 2rem;">
-                <p>👆 Upload a document to get started</p>
+                <p>Upload a document to get started</p>
             </div>
         ''', unsafe_allow_html=True)
 
